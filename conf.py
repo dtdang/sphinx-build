@@ -19,10 +19,10 @@ import requests
 from semantic_version import Version  # type: ignore
 
 sys.path.insert(0, os.path.abspath(".."))
-
+GITHUB_REPO = sys.argv[1]
 # -- Project information -----------------------------------------------------
 
-project = "silverback"
+project = f"{GITHUB_REPO}"
 copyright = "2023, ApeWorX LTD"
 author = "ApeWorX Team"
 extensions = [
@@ -63,7 +63,7 @@ plausible_domain = "docs.apeworx.io"
 html_theme = "shibuya"
 html_favicon = "favicon.ico"
 html_logo = "logo.gif"
-html_baseurl = "/apeworx/"
+html_baseurl = f"{project}"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -78,9 +78,6 @@ html_css_files = ["custom.css"]
 # since not all links are available in the markdown files pre-build.
 myst_all_links_external = True
 
-intersphinx_mapping = {
-    "apeworx": ("https://docs.apeworx.io/ape/stable/", None)
-}
 
 def fixpath(path: str) -> str:
     """

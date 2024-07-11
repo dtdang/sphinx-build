@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 REDIRECT_HTML = """
@@ -9,7 +10,8 @@ REDIRECT_HTML = """
 <title>Redirecting...</title>
 <meta http-equiv="refresh" content="0; URL=./{}/">
 """
-DOCS_BUILD_PATH = Path("docs/_build/{}}")
+GITHUB_REPO = sys.argv[1]
+DOCS_BUILD_PATH = Path("docs/_build") / GITHUB_REPO
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
