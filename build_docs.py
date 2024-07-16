@@ -18,8 +18,7 @@ STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
 class ApeDocsBuildError(Exception):
     pass
-
-def get_docs(path: Path) -> Path:
+    
     
 def git(*args):
     return subprocess.check_output(["git", *args]).decode("ascii").strip()
