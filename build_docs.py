@@ -11,14 +11,14 @@ REDIRECT_HTML = """
 <meta http-equiv="refresh" content="0; URL=./{}/">
 """
 GITHUB_REPO = sys.argv[1]
-DOCS_BUILD_PATH = Path("../docs/_build") / GITHUB_REPO
+DOCS_BUILD_PATH = Path(f"{GITHUB_REPO}/docs/_build") / GITHUB_REPO
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
 
 class ApeDocsBuildError(Exception):
     pass
-    
+
     
 def git(*args):
     return subprocess.check_output(["git", *args]).decode("ascii").strip()
