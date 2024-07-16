@@ -34,7 +34,7 @@ def new_dir(path: Path) -> Path:
 
 def build_docs(path: Path) -> Path:
     path = new_dir(path)
-
+    print(path)
     try:
         subprocess.check_call(["sphinx-build", "docs", str(path)])
     except subprocess.SubprocessError as err:
