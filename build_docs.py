@@ -10,7 +10,10 @@ REDIRECT_HTML = """
 <title>Redirecting...</title>
 <meta http-equiv="refresh" content="0; URL=./{}/">
 """
-GITHUB_REPO = sys.argv[1]
+FULL_GITHUB_REPO = sys.argv[1]
+split_path = FULL_GITHUB_REPO.split('/',1)
+GITHUB_REPO = split_path[1]
+
 DOCS_BUILD_PATH = Path(f"{GITHUB_REPO}/docs/_build") / GITHUB_REPO
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
@@ -34,7 +37,7 @@ def new_dir(path: Path) -> Path:
 
 def build_docs(path: Path) -> Path:
     path = new_dir(path)
-    print(path)
+
     try:
         subprocess.check_call(["sphinx-build", "docs", str(path)])
     except subprocess.SubprocessError as err:
