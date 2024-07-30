@@ -58,15 +58,15 @@ with open("./README.md") as readme:
 
 
 setup(
-    name="<ape-sphinx>",
+    name="sphinx-dev",
     use_scm_version=True,
     setup_requires=["setuptools_scm"],
-    description="""<ape-sphinx>: <SHORT_DESCRIPTION>""",
+    description="""ape-sphinx: Documentation""",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="ApeWorX Ltd.",
     author_email="admin@apeworx.io",
-    url="https://github.com/ApeWorX/<REPO_NAME>",
+    url="https://github.com/ApeWorX/sphinx-build",
     include_package_data=True,
     install_requires=[],
     python_requires=">=3.9,<4",
@@ -76,7 +76,7 @@ setup(
     zip_safe=False,
     keywords="ethereum",
     packages=find_packages(exclude=["tests", "tests.*"]),
-    package_data={"<ape_sphinx>": ["py.typed"]},
+    package_data={"sphinx-build": ["py.typed"]},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",

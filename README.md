@@ -1,6 +1,6 @@
 # Quick Start
 
-TODO: Description
+A script that uses sphinx to develop documentation for ApeWorX repositories.
 
 ## Dependencies
 
@@ -13,7 +13,7 @@ TODO: Description
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install <ape-sphinx>
+pip install sphinx-dev
 ```
 
 ### via `setuptools`
@@ -21,8 +21,8 @@ pip install <ape-sphinx>
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
 ```bash
-git clone https://github.com/ApeWorX/<ape-sphinx>.git
-cd <ape-sphinx>
+git clone https://github.com/ApeWorX/sphinx-dev.git
+cd sphinx-dev
 python3 setup.py install
 ```
 
