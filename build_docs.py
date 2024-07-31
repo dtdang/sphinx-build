@@ -15,10 +15,10 @@ SPLIT_PATH = FULL_GITHUB_REPO.split('/',1)
 GITHUB_REPO = SPLIT_PATH[1]
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(current_script_dir, '..'))
-SOURCE_DIR = os.path.join(project_root_dir, 'docs')
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, '..'))
+SOURCE_DIR = os.path.join(PROJECT_ROOT, 'docs')
 
-DOCS_BUILD = os.path.join(project_root_dir, f"docs/_build/{GITHUB_REPO}")
+DOCS_BUILD = os.path.join(PROJECT_ROOT, f"docs/_build/{GITHUB_REPO}")
 DOCS_BUILD_PATH = Path(f"{DOCS_BUILD}")
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
