@@ -14,7 +14,7 @@ FULL_GITHUB_REPO = sys.argv[1]
 split_path = FULL_GITHUB_REPO.split('/',1)
 GITHUB_REPO = split_path[1]
 
-DOCS_BUILD_PATH = Path(f"{GITHUB_REPO}/docs/_build") / GITHUB_REPO
+DOCS_BUILD_PATH = Path("docs/_build/ape_vyper")
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
@@ -39,7 +39,7 @@ def build_docs(path: Path) -> Path:
     path = new_dir(path)
 
     try:
-        subprocess.check_call(["sphinx-build", f"{GITHUB_REPO}/docs", str(path), "--config-dir", "sphinx-build"])
+        subprocess.check_call(["sphinx-build", f"ape_vyper/docs", str(path), "--config-dir", "sphinx-build"])
     except subprocess.SubprocessError as err:
         raise ApeDocsBuildError(f"Command 'sphinx-build docs {path}' failed.") from err
 

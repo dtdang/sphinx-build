@@ -21,7 +21,7 @@ from semantic_version import Version  # type: ignore
 sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
-project = GITHUB_REPO
+project = "ape-vyper"
 copyright = "2023, ApeWorX LTD"
 author = "ApeWorX Team"
 extensions = [
@@ -62,7 +62,7 @@ plausible_domain = "docs.apeworx.io"
 html_theme = "shibuya"
 html_favicon = "favicon.ico"
 html_logo = "logo.gif"
-html_baseurl = GITHUB_REPO
+html_baseurl = "ape-vyper"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -83,7 +83,7 @@ def fixpath(path: str) -> str:
     Change paths to reference the resources from 'latest/' to save room.
     """
     suffix = path.split("_static")[1]
-    new = f"/{GITHUB_REPO}/latest/_static"
+    new = f"/ape-vyper/latest/_static"
 
     if suffix:
         new = str(Path(new) / suffix.lstrip("/"))
@@ -96,7 +96,7 @@ def get_versions() -> list[str]:
     """
     Get all the versions from the Web.
     """
-    api_url = f"https://api.github.com/repos/ApeWorx/{GITHUB_REPO}/git/trees/gh-pages?recursive=1"
+    api_url = f"https://api.github.com/repos/ApeWorx/ape-vyper/git/trees/gh-pages?recursive=1"
     response = requests.get(api_url)
     response.raise_for_status()
     pattern = re.compile(r"v\d+.?\d+.?\d+$")
