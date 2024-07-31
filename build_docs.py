@@ -19,7 +19,7 @@ project_root_dir = os.path.abspath(os.path.join(current_script_dir, '..'))
 source_dir = os.path.join(project_root_dir, 'docs')
 
 DOCS_BUILD = os.path.join(project_root_dir, "docs/_build/ape_vyper")
-DOCS_BUILD_PATH = PATH(f"{DOCS_BUILD}")
+DOCS_BUILD_PATH = Path(f"{DOCS_BUILD}")
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
