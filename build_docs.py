@@ -14,7 +14,11 @@ FULL_GITHUB_REPO = sys.argv[1]
 split_path = FULL_GITHUB_REPO.split('/',1)
 GITHUB_REPO = split_path[1]
 
-DOCS_BUILD_PATH = Path("docs/_build/ape_vyper")
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root_dir = os.path.abspath(os.path.join(current_script_dir, '..'))
+source_dir = os.path.join(project_root_dir, 'docs')
+
+DOCS_BUILD_PATH = os.path.join(project_root_dir, "docs/_build/ape_vyper")
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
 
@@ -39,7 +43,7 @@ def build_docs(path: Path) -> Path:
     path = new_dir(path)
 
     try:
-        subprocess.check_call(["sphinx-build", f"ape_vyper/docs", str(path), "-c", "sphinx-build"])
+        subprocess.check_call(["sphinx-build", source_dir, str(path), "-c", "sphinx-build"])
     except subprocess.SubprocessError as err:
         raise ApeDocsBuildError(f"Command 'sphinx-build docs {path}' failed.") from err
 
