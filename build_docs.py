@@ -11,14 +11,14 @@ REDIRECT_HTML = """
 <meta http-equiv="refresh" content="0; URL=./{}/">
 """
 FULL_GITHUB_REPO = sys.argv[1]
-split_path = FULL_GITHUB_REPO.split('/',1)
-GITHUB_REPO = split_path[1]
+SPLIT_PATH = FULL_GITHUB_REPO.split('/',1)
+GITHUB_REPO = SPLIT_PATH[1]
 
-current_script_dir = os.path.dirname(os.path.abspath(__file__))
-project_root_dir = os.path.abspath(os.path.join(current_script_dir, '..'))
-source_dir = os.path.join(project_root_dir, 'docs')
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(current_script_dir, '..'))
+SOURCE_DIR = os.path.join(project_root_dir, 'docs')
 
-DOCS_BUILD = os.path.join(project_root_dir, "docs/_build/ape_vyper")
+DOCS_BUILD = os.path.join(project_root_dir, f"docs/_build/{GITHUB_REPO}")
 DOCS_BUILD_PATH = Path(f"{DOCS_BUILD}")
 LATEST_PATH = DOCS_BUILD_PATH / "latest"
 STABLE_PATH = DOCS_BUILD_PATH / "stable"
@@ -44,7 +44,7 @@ def build_docs(path: Path) -> Path:
     path = new_dir(path)
 
     try:
-        subprocess.check_call(["sphinx-build", source_dir, str(path), "-c", current_script_dir])
+        subprocess.check_call(["sphinx-build", SOURCE_DIR, str(path), "-c", CURRENT_DIR])
     except subprocess.SubprocessError as err:
         raise ApeDocsBuildError(f"Command 'sphinx-build docs {path}' failed.") from err
 

@@ -30,7 +30,7 @@ extras_require = {
         "sphinx_rtd_theme>=1.2.0,<2",  # Readthedocs.org theme
         "sphinxcontrib-napoleon>=0.7",  # Allow Google-style documentation
         "sphinx-plausible>=0.1.2,<0.2",
-        "shibuya"
+        "shibuya",
     ],
     "release": [  # `release` GitHub Action job uses this
         "setuptools",  # Installation tool
