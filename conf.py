@@ -62,7 +62,7 @@ plausible_domain = "docs.apeworx.io"
 html_theme = "shibuya"
 html_favicon = "favicon.ico"
 html_logo = "logo.gif"
-html_baseurl = "ape-vyper"
+html_baseurl = "ape_vyper"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -83,7 +83,7 @@ def fixpath(path: str) -> str:
     Change paths to reference the resources from 'latest/' to save room.
     """
     suffix = path.split("_static")[1]
-    new = f"/ape-vyper/latest/_static"
+    new = f"/ape_vyper/latest/_static"
 
     if suffix:
         new = str(Path(new) / suffix.lstrip("/"))
