@@ -44,7 +44,7 @@ def build_docs(path: Path) -> Path:
     path = new_dir(path)
 
     try:
-        subprocess.check_call(["sphinx-build", source_dir, str(path), "-c", "sphinx-build"])
+        subprocess.check_call(["sphinx-build", source_dir, str(path)])
     except subprocess.SubprocessError as err:
         raise ApeDocsBuildError(f"Command 'sphinx-build docs {path}' failed.") from err
 
