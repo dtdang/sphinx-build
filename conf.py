@@ -61,12 +61,12 @@ plausible_domain = "docs.apeworx.io"
 # a list of builtin themes.
 #
 html_theme = "shibuya"
-html_favicon = "favicon.ico"
+html_favicon = "_static/favicon.ico"
 # html_logo = "logo.gif"
 html_baseurl = GITHUB_REPO
 html_theme_options = {
-    "light_logo": "logo_grey.svg",
-    "dark_logo": "logo_green.svg",
+    "light_logo": "_static/logo_grey.svg",
+    "dark_logo": "_static/logo_green.svg",
     "accent_color": "lime",
 }
 
