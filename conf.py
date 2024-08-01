@@ -67,7 +67,7 @@ html_baseurl = GITHUB_REPO
 html_theme_options = {
     "light_logo": "logo_grey.png",
     "dark_logo": "logo_green.png",
-    "accent_color": rgba(126,250,1)
+    "accent_color": "lime",
 }
 
 
