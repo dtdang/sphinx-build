@@ -86,7 +86,7 @@ myst_all_links_external = True
 # Set some default to avoid unnecessary repetitious directives.
 autodoc_default_options = {
     "exclude-members": (
-        "__repr__, __weakref__, __metaclass__, __init__, __format__,  __new__, __str__, __dir__"
+        "__repr__, __weakref__, __metaclass__, __init__, __format__,  __new__, __str__, __dir__,"
         "model_config, model_fields, model_post_init, model_computed_fields,"
         "__ape_extra_attributes__,"
     )
@@ -116,7 +116,7 @@ def get_versions() -> list[str]:
     pattern = re.compile(r"v\d+.?\d+.?\d+$")
     data = response.json()
     tree = data.get("tree", [])
-    versions = list({x["path"] for x in tree if x["type"] == "tree" and pattern.match(x["path"])})
+a    versions = list({x["path"] for x in tree if x["type"] == "tree" and pattern.match(x["path"])})
     sorted_version_objs = sorted([Version(v.lstrip("v")) for v in versions], reverse=True)
     return [f"v{x}" for x in sorted_version_objs]
 
