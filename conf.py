@@ -65,8 +65,8 @@ html_favicon = "favicon.ico"
 html_logo = "logo.gif"
 html_baseurl = GITHUB_REPO
 html_theme_options = {
-    "light_logo": "logo_grey.png",
-    "dark_logo": "logo_green.png",
+    "light_logo": "logo_grey.svg",
+    "dark_logo": "logo_green.svg",
     "accent_color": "lime",
 }
 
