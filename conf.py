@@ -116,7 +116,7 @@ def get_versions() -> list[str]:
     pattern = re.compile(r"v\d+.?\d+.?\d+$")
     data = response.json()
     tree = data.get("tree", [])
-a    versions = list({x["path"] for x in tree if x["type"] == "tree" and pattern.match(x["path"])})
+    versions = list({x["path"] for x in tree if x["type"] == "tree" and pattern.match(x["path"])})
     sorted_version_objs = sorted([Version(v.lstrip("v")) for v in versions], reverse=True)
     return [f"v{x}" for x in sorted_version_objs]
 
