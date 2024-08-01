@@ -13,7 +13,7 @@ A script that uses sphinx to develop documentation for ApeWorX repositories.
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install sphinx-dev
+pip install docs-build
 ```
 
 ### via `setuptools`
@@ -21,8 +21,8 @@ pip install sphinx-dev
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
 ```bash
-git clone https://github.com/ApeWorX/sphinx-dev.git
-cd sphinx-dev
+git clone https://github.com/ApeWorX/docs-build.git
+cd docs-build
 python3 setup.py install
 ```
 

@@ -64,11 +64,17 @@ html_theme = "shibuya"
 html_favicon = "favicon.ico"
 html_logo = "logo.gif"
 html_baseurl = GITHUB_REPO
+html_theme_options = {
+    "light_logo": "logo_grey.png",
+    "dark_logo": "logo_green.png",
+    "accent_color": rgba(126,250,1)
+}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = []
+html_static_path = ["_static"]
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
