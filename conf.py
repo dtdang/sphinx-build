@@ -17,9 +17,9 @@ from pathlib import Path
 
 import requests
 from semantic_version import Version  # type: ignore
-from build_docs import GITHUB_REPO
 
 sys.path.insert(0, os.path.abspath(".."))
+GITHUB_REPO = os.getenv('GITHUB_REPO')
 # -- Project information -----------------------------------------------------
 
 project = GITHUB_REPO

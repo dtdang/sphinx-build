@@ -10,10 +10,7 @@ REDIRECT_HTML = """
 <title>Redirecting...</title>
 <meta http-equiv="refresh" content="0; URL=./{}/">
 """
-FULL_GITHUB_REPO = sys.argv[1]
-SPLIT_PATH = FULL_GITHUB_REPO.split('/',1)
-GITHUB_REPO = SPLIT_PATH[1]
-
+GITHUB_REPO = os.getenv('GITHUB_REPO')
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, '..'))
 SOURCE_DIR = os.path.join(PROJECT_ROOT, 'docs')
